@@ -4,3 +4,4 @@
 
 ## Description of sh_log_script
 <p>This is my second or third Bash Script</p>
+<p>Well this program taught me how to use read in Bash.</p>
