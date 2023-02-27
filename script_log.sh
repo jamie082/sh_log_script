@@ -6,8 +6,9 @@
 
 # the command - find /var/messages -type f | wc -l
 read -p "Enter file name for /var/log: " file_name
-exec lsb_release -a
-echo "Starting command ..."
-FIND_FUNCTION="find /var/log -type f -iname $file_name | wc -l
-echo $FIND_FUNCTION
-echo "you are out of the function. Script done."
+echo "Starting script ..."
+for i in $(find /var/log -type f -iname $file_name* | wc -l);
+do
+	echo "$i match found."
+done
+echo "The script ended."
