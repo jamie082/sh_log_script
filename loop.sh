@@ -7,5 +7,12 @@
 # the command - find /var/messages -type f | wc -l
 read -p "Enter file name for /var/log: " file_name
 exec lsb_release -a
-FIND_CMD=$(find /var/log -type f -iname file_name | wc -l) # from read command
-echo $FIND_CMD
+echo "Starting command ..."
+
+exec_function ()
+{
+	find /var/log -type f -iname "$file_name" | wc -l
+}
+exec_function
+
+echo "you are out of the function. Script done."
