@@ -8,11 +8,6 @@
 read -p "Enter file name for /var/log: " file_name
 exec lsb_release -a
 echo "Starting command ..."
-
-exec_function ()
-{
-	find /var/log -type f -iname "$file_name" | wc -l
-}
-exec_function
-
+FIND_FUNCTION="find /var/log -type f -iname $file_name | wc -l
+echo $FIND_FUNCTION
 echo "you are out of the function. Script done."
