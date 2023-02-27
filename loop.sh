@@ -5,6 +5,7 @@
 # > lsb_release -a
 
 # the command - find /var/messages -type f | wc -l
-exec lsb_release -a
 read -p "Enter file name for /var/log: " file_name
-find_cmd=$(find /var/log -type f -iname file_name)
+exec lsb_release -a
+FIND_CMD=$(find /var/log -type f -iname file_name | wc -l) # from read command
+echo $FIND_CMD
